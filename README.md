@@ -1,4 +1,4 @@
-# js-73-exercises 👨🏼‍💻
+# 73-js-exercises 👨🏼‍💻
 
 Go through 73 JavaScript exercises to deepen the knowledge about this complex subject.
 
