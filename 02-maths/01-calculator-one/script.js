@@ -11,35 +11,35 @@
 
 (function () {
   // to get the value of an input: document.getElementById("element-id").value
-
-  let opOne = document.getElementById('op-one');
-  let opTwo = document.getElementById('op-two');
   let output = document.getElementById('output');
-
-  let opOneVal = Number(opOne.value);
-  let opTwoVal = Number(opTwo.value);
+  let opOne;
+  let opTwo;
 
   document.getElementById('addition').addEventListener('click', function () {
-    let calc = opOneVal + opTwoVal;
+    opOne = Number(document.getElementById('op-one').value);
+    opTwo = Number(document.getElementById('op-two').value);
+    let calc = opOne + opTwo;
     output.value = calc;
   });
 
-  document
-    .getElementById('substraction')
-    .addEventListener('click', function () {
-      let calc = opOneVal - opTwoVal;
-      output.value = calc;
-    });
+  document.getElementById('substraction').addEventListener('click', function () {
+    opOne = Number(document.getElementById('op-one').value);
+    opTwo = Number(document.getElementById('op-two').value);
+    let calc = opOne - opTwo;
+    output.value = calc;
+  });
 
-  document
-    .getElementById('multiplication')
-    .addEventListener('click', function () {
-      let calc = opOneVal * opTwoVal;
-      output.value = calc;
-    });
+  document.getElementById('multiplication').addEventListener('click', function () {
+    opOne = Number(document.getElementById('op-one').value);
+    opTwo = Number(document.getElementById('op-two').value);
+    let calc = opOne * opTwo;
+    output.value = calc;
+  });
 
   document.getElementById('division').addEventListener('click', function () {
-    let calc = opOneVal / opTwoVal;
+    opOne = Number(document.getElementById('op-one').value);
+    opTwo = Number(document.getElementById('op-two').value);
+    let calc = opOne / opTwo;
     output.value = calc;
   });
 })();
