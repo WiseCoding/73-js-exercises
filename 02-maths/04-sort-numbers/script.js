@@ -13,9 +13,9 @@
   // to get the value of an input: document.getElementById("element-id").value
 
   document.getElementById('run').addEventListener('click', function () {
-    const numString = document.querySelector('#numbers').value;
-    const numArray = numString.split(',');
+    const input = document.querySelector('#numbers');
+    const numArray = input.value.split(',');
     const sort = numArray.sort((a, b) => a - b);
-    console.log(sort);
+    input.value = sort;
   });
 })();
