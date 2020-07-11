@@ -9,12 +9,18 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  document.getElementById('run').addEventListener('click', function () {
+    const one = 1;
+    const two = 21;
 
-    document.getElementById("run").addEventListener("click", function() {
-
-        // your code here
-
-    });
-
+    for (let i = one; i < two; i++) {
+      let total = i * i;
+      if (total > two) {
+        return;
+      }
+      //alert(total);
+      console.log(total);
+    }
+  });
 })();
