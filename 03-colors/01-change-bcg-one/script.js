@@ -25,6 +25,5 @@
 
   function colorizer(color) {
     document.body.style.backgroundColor = color;
-    console.log(color);
   }
 })();
