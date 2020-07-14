@@ -9,10 +9,50 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  let time = dateTransform();
+  changeText(time);
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+  function dateTransform() {
+    const days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    const months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
 
-    // your code here
+    const now = new Date();
+    const wday = days[now.getDay()];
+    const mday = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+    const hour = now.getHours();
+    const min = now.getMinutes();
 
+    const time = `${wday} ${mday} ${month} ${year}, ${hour}h${min}`;
+
+    console.log(time);
+    return time;
+  }
+
+  function changeText(newDate) {
+    document.querySelector('#target').textContent = newDate;
+  }
 })();

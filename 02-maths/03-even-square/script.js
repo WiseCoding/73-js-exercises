@@ -10,17 +10,19 @@
 // You will have time to focus on it later.
 
 (function () {
-  document.getElementById('run').addEventListener('click', function () {
-    const one = 1;
-    const two = 21;
+  /* document.getElementById('run').addEventListener('click', function () { */
+  const one = 1;
+  const two = 21;
+  let arr = [];
 
-    for (let i = one; i < two; i++) {
-      let total = i * i;
-      if (total > two) {
-        return;
-      }
-      //alert(total);
-      console.log(total);
+  for (let i = one; i < two; i++) {
+    let total = i * i;
+
+    if (total > two) {
+      return total;
     }
-  });
+    console.log(total);
+    alert(total);
+  }
+  /* }); */
 })();
