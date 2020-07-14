@@ -47,7 +47,6 @@
 
       default:
         output.value = 'Do something!';
-
     }
   };
 
