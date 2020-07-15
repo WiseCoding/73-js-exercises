@@ -38,5 +38,16 @@
     },
   ];
 
-  // your code here
+  document.querySelector('#run').onclick = () => {
+    let i = 0;
+    people.forEach((element) => {
+      let log = people[i].firstname;
+      if (i < people.length) {
+        i++;
+      } else {
+        i = 0;
+      }
+      console.log(log);
+    });
+  };
 })();
