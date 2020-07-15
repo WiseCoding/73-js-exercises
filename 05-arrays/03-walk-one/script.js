@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /05-arrays/02-manipulate-array/script.js - 5.2: manipulation de tableau
+ * /05-arrays/01-get-element/script.js - 5.1: élément de tableau
  *
  * coded by leny@BeCode
  * started at 26/10/2018
@@ -13,8 +13,10 @@
   let fruits = [
     'apple',
     'pear',
-    'strawberry',
-    'tomato',
+    'raspberry',
+    'tomatoes',
+    'kiwi',
+    'banana',
     'orange',
     'mandarin',
     'durian',
@@ -24,12 +26,9 @@
   ];
 
   document.querySelector('#run').onclick = () => {
-    fruits.shift(); // rm first
-    fruits.pop(); // rm last
-    fruits.unshift('banana'); // add first
-    fruits.push('kiwi'); // add last
-
-    console.log(fruits);
-    alert(fruits);
+    for (let i = 0; i < fruits.length; i++) {
+      const print = fruits[i];
+      console.log(print);
+    }
   };
 })();
