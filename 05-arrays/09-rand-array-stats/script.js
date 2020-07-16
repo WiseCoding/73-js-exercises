@@ -30,10 +30,10 @@
     document.querySelector('#max').textContent = max;
 
     // Calculate sum of all numbers (sum)
-    const sum = (accumulator, currentValue) => accumulator + currentValue;
-    document.querySelector('#sum').textContent = numbers.reduce(sum);
+    const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+    document.querySelector('#sum').textContent = sum;
 
     // Calculate average of all numbers (average)
-    document.querySelector('#average').textContent = numbers.reduce(sum) / numbers.length;
+    document.querySelector('#average').textContent = sum / numbers.length;
   };
 })();
