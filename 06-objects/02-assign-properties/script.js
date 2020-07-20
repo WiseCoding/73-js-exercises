@@ -29,10 +29,12 @@
 
   document.querySelector('#run').onclick = () => {
     computers.forEach((x) => {
-      x.available === undefined ? (x.available = defaultProps.available) : 'Woops';
-      x.os === undefined ? (x.os = defaultProps.os) : 'Woops';
-      x.user === undefined ? (x.user = defaultProps.user) : 'Woops';
+      // If computers property-value is undefined, input defaultProps Property-value
+      x.available === undefined ? (x.available = defaultProps.available) : '';
+      x.os === undefined ? (x.os = defaultProps.os) : '';
+      x.user === undefined ? (x.user = defaultProps.user) : '';
     });
+    // Log
     console.log(computers);
   };
 })();

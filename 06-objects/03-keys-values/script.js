@@ -19,7 +19,10 @@
     status: 'married',
   };
   document.querySelector('#run').onclick = () => {
+    // Log Object Keys
     console.log(Object.keys(person));
+
+    // log Object Values
     console.log(Object.values(person));
   };
 })();

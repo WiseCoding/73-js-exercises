@@ -10,6 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
+  // Create Object
   const me = [
     {
       lastname: 'Bwontie',
@@ -20,6 +21,7 @@
     },
   ];
   document.querySelector('#run').onclick = () => {
+    // Log Object
     console.log(
       `Hello! My name is ${me[0].firstname} ${me[0].lastname}, I am ${me[0].age} years old and live in ${me[0].country} in the city of ${me[0].city}.`
     );
