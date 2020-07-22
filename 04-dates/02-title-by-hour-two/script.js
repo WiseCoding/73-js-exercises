@@ -13,7 +13,7 @@
   // Change greeting message if our input time is smaller than the actual time
   function greeting(inpTime) {
     // get current hour and minutes
-    now = getFullTime();
+    let now = getFullTime();
 
     let message;
 

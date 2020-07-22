@@ -20,12 +20,12 @@
   target.appendChild(span);
 
   // Animation
-  let id = setInterval(frame, 100);
+  let id = setInterval(modifySize, 100);
   let size = 1;
   let growth = 'grow';
 
   // Function
-  function frame() {
+  function modifySize() {
     let fontSize = '1rem';
 
     //size
