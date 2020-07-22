@@ -29,9 +29,10 @@
     }
     static greeting = 'Hello you Dog';
   }
-
-  console.log(new Cat('Johnny').sayHello());
-  console.log(new Dog('Marina').sayHello());
+  document.querySelector('#run').onclick = () => {
+    console.log(new Cat('Johnny').sayHello());
+    console.log(new Dog('Marina').sayHello());
+  };
 })();
 /* class Dog extends Animal {
     name() {
