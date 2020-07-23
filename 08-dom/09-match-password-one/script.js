@@ -9,8 +9,21 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  document.querySelector('#run').onclick = () => {
+    const pass1 = document.querySelector('#pass-one');
+    const pass2 = document.querySelector('#pass-two');
+    const val1 = pass1.value;
+    const val2 = pass2.value;
 
-    // your code here
-
+    if (val1 === val2) {
+      pass1.style.borderColor = '#c0c0c0';
+      pass2.style.borderColor = '#c0c0c0';
+      console.log('Match!');
+    } else {
+      pass1.style.borderColor = 'red';
+      pass2.style.borderColor = 'red';
+      console.log('No Match');
+    }
+  };
 })();
