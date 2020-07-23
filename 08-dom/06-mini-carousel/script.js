@@ -11,11 +11,11 @@
 
 (function () {
   var gallery = [
-    '../../_shared/img/bell.svg',
-    '../../_shared/img/clock.svg',
-    '../../_shared/img/compass.svg',
-    '../../_shared/img/lemon.svg',
-    '../../_shared/img/map.svg',
+    '../../00-shared/img/bell.svg',
+    '../../00-shared/img/clock.svg',
+    '../../00-shared/img/compass.svg',
+    '../../00-shared/img/lemon.svg',
+    '../../00-shared/img/map.svg',
   ];
 
   let i = 0;
