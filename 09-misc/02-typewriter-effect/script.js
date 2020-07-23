@@ -9,8 +9,21 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const target = document.querySelector('#target');
+  const text = target.textContent;
+  target.textContent = '';
+  let i = 0;
 
-    // your code here
+  function typeWriter() {
+    if (i < text.length) {
+      target.innerHTML += text[i];
+      i++;
+      let speed = ~~(Math.random() * 200) + 1;
+      setTimeout(typeWriter, speed);
+      console.log(speed);
+    }
+  }
 
+  typeWriter();
 })();
