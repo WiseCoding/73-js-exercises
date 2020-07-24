@@ -1,0 +1,62 @@
+<!--
+ * becode/javascript
+ *
+ * /10-asynchronous/02-get-comments/index.html - 10.2: loading articles and comments
+ *
+ * coded by leny@BeCode
+ * started at 09/05/2019
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BeCode/JavaScript - 10.2: loading articles and comments</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../../00-shared/css/normalize.css" />
+    <link rel="stylesheet" href="../../00-shared/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>BeCode / JavaScript</h1>
+        <h2>
+          <span>10.2</span>
+          <strong>loading articles and comments</strong>
+        </h2>
+      </header>
+      <div class="content">
+        <section class="explain">
+          <p>
+            You must have noticed, in the previous exercise, that the articles received
+            via the
+            <strong> window.lib.getPosts </strong> function included a property
+            <strong>id</strong>.
+          </p>
+          <p>
+            The <strong> window.lib.getComments () </strong> function is available in the
+            script. It should be given an item id as the first parameter, so as a second
+            parameter callback. After a short delay, the callback will be executed with
+            two parameters: the first contains an error (if there is any one, otherwise
+            <em> null </em>), the second an array of article comments.
+          </p>
+          <p>
+            When you click on the button, calls the getPosts function. For each item
+            retrieved, calls the getComments function and adds the comments obtained in a
+            <em> comments </em> property of the article. Display articles in the console
+            (the getPosts and getComments functions never return error).
+          </p>
+        </section>
+        <section class="material">
+          <div class="actions">
+            <button type="button" id="run">Start the script</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="../../00-shared/lib/utils.js"></script>
+    <script src="../../00-shared/lib/callbacks.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

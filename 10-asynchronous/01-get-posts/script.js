@@ -10,7 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-  function myCallbackFunction(error, articles) {
+  function callBackFunc(error, articles) {
     if (error) {
       console.error(error);
       return;
@@ -19,5 +19,7 @@
     console.log(articles);
   }
 
-  window.lib.getPosts(myCallbackFunction);
+  document.querySelector('#run').onclick = () => {
+    window.lib.getPosts(callBackFunc);
+  };
 })();
