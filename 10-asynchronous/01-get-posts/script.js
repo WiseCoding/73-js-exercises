@@ -10,13 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-  function callBackFunc(error, articles) {
+  function cb(error, articles) {
     if (error) {
       console.error(error);
       return;
     }
-
-    console.log(articles);
+    console.log(articles, 'Articles Log');
   }
 
   document.querySelector('#run').onclick = () => {
