@@ -1,0 +1,54 @@
+<!--
+ * becode/javascript
+ *
+ * /10-asynchronous/06-promise-handling-errors/index.html - 10.6: error handling (Promise)
+ *
+ * coded by leny@BeCode
+ * started at 09/05/2019
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BeCode/JavaScript - 10.6: error handling (Promise)</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../../00-shared/css/normalize.css" />
+    <link rel="stylesheet" href="../../00-shared/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>BeCode / JavaScript</h1>
+        <h2>
+          <span>10.6</span>
+          <strong>error handling (Promise)</strong>
+        </h2>
+      </header>
+      <div class="content">
+        <section class="explain">
+          <p>
+            The <strong> window.lib.getPersons () </strong> function is available in the
+            script. She returns a Promise which will be resolved, after a short delay,
+            with an array of people.
+          </p>
+          <p>
+            When clicking on the button, call the getPersons function and display the
+            result obtained in the console. <strong> Warning: </strong> the Promise
+            returned by the getPersons function has more or less a 50/50 chance of being
+            rejected with a mistake. If so, use <em> console.error () </em> to display it.
+          </p>
+        </section>
+        <section class="material">
+          <div class="actions">
+            <button type="button" id="run">Start the script</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="../../00-shared/lib/utils.js"></script>
+    <script src="../../00-shared/lib/promises.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
