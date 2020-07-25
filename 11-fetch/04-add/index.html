@@ -1,0 +1,64 @@
+<!--
+ * becode/javascript
+ *
+ * /11-fetch/04-add/index.html - 11.4: add item
+ *
+ * coded by leny@BeCode
+ * started at 12/05/2019
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BeCode/JavaScript - 11.4: add item</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../../00-shared/css/normalize.css" />
+    <link rel="stylesheet" href="../../00-shared/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>BeCode / JavaScript</h1>
+        <h2>
+          <span>11.4</span>
+          <strong>add item</strong>
+        </h2>
+      </header>
+      <div class="content">
+        <section class="explain">
+          <p>
+            When clicking on the button, retrieves the values ​​of the form and creates
+            the new one hero in the API. <br />
+            Each field must be filled (up to you).
+          </p>
+          <p>Display the result of your request in the console.</p>
+          <p>
+            <strong> Warning: </strong> powers must be stored in the form of a board !
+          </p>
+        </section>
+        <section class="material">
+          <form action="#" method="post">
+            <div class="field dob">
+              <label for="hero-name">Last name:</label>
+              <input type="text" name="name" id="hero-name" />
+            </div>
+            <div class="field dob">
+              <label for="hero-alter-ego">Another self:</label>
+              <input type="text" name="alter-ego" id="hero-alter-ego" />
+            </div>
+            <div class="field dob">
+              <label for="hero-powers">Powers:</label>
+              <input type="text" name="powers" id="hero-powers" />
+            </div>
+            <div class="actions">
+              <button type="button" id="run">Start the script</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

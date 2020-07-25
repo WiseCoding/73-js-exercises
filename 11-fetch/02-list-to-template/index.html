@@ -1,0 +1,59 @@
+<!--
+ * becode/javascript
+ *
+ * /11-fetch/02-list-to-template/index.html - 11.2: list to template
+ *
+ * coded by leny@BeCode
+ * started at 12/05/2019
+-->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BeCode/JavaScript - 11.2: list to template</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link rel="stylesheet" href="../../00-shared/css/normalize.css" />
+    <link rel="stylesheet" href="../../00-shared/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>BeCode / JavaScript</h1>
+        <h2>
+          <span>11.2</span>
+          <strong>list to template</strong>
+        </h2>
+      </header>
+      <div class="content">
+        <section class="explain">
+          <p>
+            When clicking on the button, use the function
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">
+              fetch </a
+            >, get the list of X-Men and display it in the tag whose id is "target". Use
+            the <strong> template </strong> tag to reproduce a html structure for each
+            hero.
+          </p>
+        </section>
+        <section class="material">
+          <div class="actions">
+            <button type="button" id="run">Start the script</button>
+          </div>
+          <template id="tpl-hero">
+            <li class="hero">
+              <h4 class="title">
+                <strong class="name"></strong>
+                <em class="alter-ego"></em>
+              </h4>
+              <p class="powers"></p>
+            </li>
+          </template>
+          <ol id="target"></ol>
+        </section>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

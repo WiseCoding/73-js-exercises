@@ -10,5 +10,19 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  document.querySelector('#run').onclick = () => {
+    getHeroes().catch(error);
+  };
+
+  async function getHeroes() {
+    const response = await fetch('http://localhost:3000/heroes');
+    const json = await response.json();
+    console.log(json);
+  }
+
+  async function error(error) {
+    await error;
+    console.log('Bummer.. error!');
+    console.error(error);
+  }
 })();
