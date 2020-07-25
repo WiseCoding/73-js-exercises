@@ -18,9 +18,11 @@
 
   function insertComments(articles) {
     for (const obj in articles) {
+      const id = articles[obj].id;
+
       // Nested Promise, get comments & insert in each article
       window.lib
-        .getComments()
+        .getComments(id)
         .then((comments) => {
           articles[obj].comments = comments;
         })
