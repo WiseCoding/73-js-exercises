@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /10-asynchronous/01-get-posts/script.js - 10.1: chargement d'articles
+ * /10-asynchronous/04-promise-get-posts/script.js - 10.4: chargement d'articles (Promise)
  *
  * coded by leny@BeCode
  * started at 09/05/2019
@@ -10,16 +10,10 @@
 // You will have time to focus on it later.
 
 (() => {
-  function callBackFunc(error, articles) {
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    console.log(articles);
-  }
-
   document.querySelector('#run').onclick = () => {
-    window.lib.getPosts(cb);
+    window.lib
+      .getPosts()
+      .then((articles) => console.log(articles))
+      .catch((error) => console.log(error));
   };
 })();
