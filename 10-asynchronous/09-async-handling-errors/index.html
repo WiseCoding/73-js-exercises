@@ -1,7 +1,7 @@
 <!--
  * becode/javascript
  *
- * /10-asynchronous/09-async-handling-errors/index.html - 10.9: gestion d'erreur (async/await)
+ * /10-asynchronous/09-async-handling-errors/index.html - 10.9: error handling(async/await)
  *
  * coded by leny@BeCode
  * started at 09/05/2019
@@ -10,7 +10,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>BeCode/JavaScript - 10.9: gestion d'erreur (async/await)</title>
+    <title>BeCode/JavaScript - 10.9: error handling (async/await)</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
     <link rel="stylesheet" href="../../00-shared/css/normalize.css" />
@@ -22,30 +22,30 @@
         <h1>BeCode / JavaScript</h1>
         <h2>
           <span>10.9</span>
-          <strong>gestion d'erreur (async/await)</strong>
+          <strong>error handling (async / await)</strong>
         </h2>
       </header>
       <div class="content">
         <section class="explain">
           <p>
-            La fonction <strong>window.lib.getPersons()</strong> est disponible dans le
-            script. Elle retourn une Promise qui sera résolue, après un petit délai, avec
-            un tableau de personnes.
+            The <strong> window.lib.getPersons () </strong> function is available in the
+            script. She returns a Promise which will be resolved, after a short delay,
+            with an array of people.
           </p>
           <p>
-            Au clic sur le bouton, appelle la fonction getPersons et affiche le resultat
-            obtenus dans la console. <strong>Attention :</strong> la Promise retournée par
-            la fonction getPersons a plus ou moins une chance sur deux d'être rejetée avec
-            une erreur. Si c'est le cas, utilise <em>console.error()</em> pour l'afficher.
+            When clicking on the button, call the getPersons function and display the
+            result obtained in the console. <strong> Warning: </strong> the Promise
+            returned by the getPersons function has more or less a 50/50 chance of being
+            rejected with a mistake. If so, use <em> console.error () </em> to display it.
           </p>
           <p>
-            <strong>Note :</strong> pour cet exercice, utilise la syntaxe
-            <em>async/await</em>.
+            <strong> Note: </strong> for this exercise, use the syntax
+            <em> async / await </em>.
           </p>
         </section>
         <section class="material">
           <div class="actions">
-            <button type="button" id="run">Lancer le script</button>
+            <button type="button" id="run">Start the script</button>
           </div>
         </section>
       </div>
