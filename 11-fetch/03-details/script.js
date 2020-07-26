@@ -44,13 +44,16 @@
             `;
     } else {
       // If response has a hero, print out hero properties in html template
-      const id = response.id;
-      const name = response.name;
-      const altEgo = response.alterEgo;
-      const abilArr = response.abilities;
-      let abilStr = '';
+
+      const [id, name, altEgo, abilArr] = [
+        response.id,
+        response.name,
+        response.alterEgo,
+        response.abilities,
+      ]; // Destructuring assignment
 
       // List each ability
+      let abilStr;
       abilArr.forEach((element) => {
         abilStr += `<li>${element}</li>`;
       });
