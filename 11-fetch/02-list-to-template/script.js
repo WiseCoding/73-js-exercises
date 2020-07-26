@@ -38,20 +38,22 @@
       const name = obj.name;
       const altEgo = obj.alterEgo;
       const abilArr = obj.abilities;
-      const ab1 = abilArr[0];
-      const ab2 = abilArr[1];
+      let abilStr = '';
+
+      abilArr.forEach((element) => {
+        abilStr += `<li>${element}</li>`;
+      });
 
       html += `
-              <li class="hero">
-                <h4 class="title">#${id}
-                 <strong class="name">${name}
-                 </strong><em class="alter-ego">${altEgo}</em>
-                </h4>
-                <ul class="powers">
-                 <li>${ab1}</li>
-                 <li>${ab2}</li>
-                </ul>
-              </li>
+      <li class="hero">
+        <h4 class="title">#${id}
+          <strong class="name">${name}
+          </strong><em class="alter-ego">${altEgo}</em>
+        </h4>
+        <ul class="powers">
+          ${abilStr}
+        </ul>
+      </li>
       `;
     }
     target.innerHTML = html;
