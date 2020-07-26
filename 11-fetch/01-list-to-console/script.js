@@ -22,7 +22,6 @@
 
   async function error(error) {
     await error;
-    console.log('Bummer.. error!');
     console.error(error);
   }
 })();
