@@ -25,14 +25,16 @@
 
     // Fetch, url & options (delete hero by ID)
     const del = await fetch(`http://localhost:3000/heroes/${id}`, options);
-    return del;
+    // If promise "OK" is true, if else, promise OK is a status returned by the server
+    return del.ok
+      ? console.log(`Hero with ID '${id}' successfully deleted!`)
+      : console.log(`Error, hero with ID '${id}' does not exist`);
   }
 
   // Click Event
   document.querySelector('#run').onclick = async () => {
     // Fetch and delete hero by ID#
     const id = document.querySelector('#hero-id').value;
-    const del = await deleteHero(id).catch(error);
-    console.log(await del);
+    await deleteHero(id).catch(error);
   };
 })();

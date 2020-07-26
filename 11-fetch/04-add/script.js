@@ -10,17 +10,13 @@
 // You will have time to focus on it later.
 
 (async () => {
-  // Get id for new object
-  const lastID = await returnHeroes();
-  console.log(lastID[1]);
-
   // Handle error function
   async function error() {
-    console.error(error, 'Error Called');
+    console.error(error);
   }
 
   // Add New Hero data to localhost
-  async function postHero(input) {
+  async function postHero(input, id) {
     // Set Fetch API Options
     const options = {
       method: 'Post',
@@ -31,7 +27,10 @@
 
     // Fetch, url & options (add hero)
     const push = await fetch('http://localhost:3000/heroes', options);
-    return push.json();
+    // If promise "OK" is true, if else, promise OK is a status returned by the server
+    return (await push.ok)
+      ? console.log(await push.json(), 'Hero Successfully Added!')
+      : console.log(`ERROR! Can't add hero. Delete hero with ID '${id}' first.`);
   }
 
   async function returnHeroes() {
@@ -43,15 +42,22 @@
 
   // Click Handler
   document.querySelector('#run').onclick = async () => {
-    // Get input from user and store in object
+    // Get id for new object, based on object length, might cause issues when deleting objects...
+    const lastID = await returnHeroes();
     const id = lastID[1] + 1;
+
+    // Get input from user and store in object
     const name = document.querySelector('#hero-name').value;
     const alterEgo = document.querySelector('#hero-alter-ego').value;
     const abilities = document.querySelector('#hero-powers').value.split(',');
-    const input = { id, name, alterEgo, abilities };
+    const input = {
+      id,
+      name,
+      alterEgo,
+      abilities,
+    };
 
     // Fetch and add user input data
-    const push = await postHero(input).catch(error);
-    console.log(push, 'Hero has been successfully added!');
+    await postHero(input, id).catch(error);
   };
 })();
