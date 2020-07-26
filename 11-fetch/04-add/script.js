@@ -12,6 +12,7 @@
 (async () => {
   // Get id for new object
   const lastID = await returnHeroes();
+  console.log(lastID[1]);
 
   // Handle error function
   async function error() {
@@ -43,7 +44,7 @@
   // Click Handler
   document.querySelector('#run').onclick = async () => {
     // Get input from user and store in object
-    const id = lastID[1];
+    const id = lastID[1] + 1;
     const name = document.querySelector('#hero-name').value;
     const alterEgo = document.querySelector('#hero-alter-ego').value;
     const abilities = document.querySelector('#hero-powers').value.split(',');
