@@ -17,9 +17,9 @@
   };
 
   async function getHero(id) {
-    const heroes = await fetch('http://localhost:3000/heroes');
-    const json = await heroes.json();
-    const hero = json[id - 1];
+    const heroGet = await fetch(`http://localhost:3000/heroes/${id}`);
+    const json = await heroGet.json();
+    const hero = json;
     const nohero = json.length;
 
     return hero === undefined ? ['Hero ID does not exist', nohero] : hero;
@@ -53,7 +53,7 @@
       ]; // Destructuring assignment
 
       // List each ability
-      let abilStr;
+      let abilStr = '';
       abilArr.forEach((element) => {
         abilStr += `<li>${element}</li>`;
       });
