@@ -11,20 +11,23 @@
 
 (function () {
   //1: SET INTERVALS - milliseconds
-  const colorInterval = 400;
-  const growthInterval = 50;
-  const spans = spanHTML();
+  const colorInterval = 100;
+  const waveInterval = 50;
+  const waveDelay = 50;
+  const stretchInterval = 50;
+  const stretchDelay = 40;
+  const delay = (ms) => new Promise((res) => setTimeout(res, ms)); //Used promise to set delay
+  const spans = textToSpanElements(); // Get html input and place into individual spans
 
   //2: CALL FUNCTIONS
-  document.querySelector('#target').onclick = () => {
-    setInterval(() => {
-      colorChangeAnimation(spans);
-    }, colorInterval);
-    fontGrowthAnimation(spans, growthInterval);
-  };
+  setInterval(() => {
+    colorChangeAnimation(spans);
+  }, colorInterval);
+  stretchAnimation(spans, stretchInterval, stretchDelay);
+  waveAnimation(spans, waveInterval, waveDelay);
 
   // FUNCTIONS
-  function spanHTML() {
+  function textToSpanElements() {
     // Get html, Place each letter in an array, Wrap an span with unique ID around every letter
     const target = document.querySelector('#target');
     const array = [...target.textContent];
@@ -50,47 +53,68 @@
     const array = letters;
     for (let i = 1; i < array.length + 1; i++) {
       const [r, g, b] = [
-        ~~(Math.random() * 250) + 1,
-        ~~(Math.random() * 250) + 1,
-        ~~(Math.random() * 250) + 1,
+        ~~(Math.random() * 70) + 100,
+        ~~(Math.random() * 70) + 100,
+        ~~(Math.random() * 70) + 100,
       ];
       const fontColor = `rgb(${r},${g},${b})`;
       document.querySelector(`#char${i}`).style.color = fontColor;
     }
   }
 
-  function fontGrowthAnimation(letters, interval) {
+  // Make each letter move up and down and create a wave
+  async function waveAnimation(letters, interval, wait) {
     const array = letters;
-    const growthInterval = interval;
-    let size = 2;
-    let i = 0;
-    let state = 'grow';
+    const waveInterval = interval;
+    const waveDelay = wait;
 
-    setInterval(() => {
-      if (state === 'grow') {
-        size += 0.3;
-      }
-      if (state === 'shrink') {
-        size -= 0.3;
-      }
-      if (size > 6) {
-        state = 'shrink';
-      }
-      if (size < 2) {
-        state = 'grow';
-      }
-      if (i < array.length) {
-        i++;
-      } else {
-        i = 1;
-        size = ~~(Math.random() * 6) + 2;
-      }
-      document.querySelector(`#char${i}`).style.fontSize = `${size}rem`;
-      console.log(i, size.toFixed(2), state, letters[i - 1]);
-    }, growthInterval);
+    for (let i = 0; i < array.length; i++) {
+      let item = document.getElementById(`char${i + 1}`).style;
+      item.position = 'relative';
+      let horizontal = 0;
+
+      // Make individual letter bounce up and down
+      setInterval(() => {
+        if (horizontal === 360) {
+          horizontal = 0;
+        } else {
+          horizontal++;
+        }
+        let vertical = 0;
+        item.top = `${vertical + Math.sin(5 * Math.PI * (horizontal / 50)) * 8}px`;
+      }, waveInterval);
+
+      // Set delay between each letter
+      await delay(waveDelay);
+    }
   }
 
-  function waveAnimation() {
-    console.log('waveAnimation Function Called');
+  // Stretch the wave horizontally
+  async function stretchAnimation(letters, interval, wait) {
+    const array = letters;
+    const waveInterval = interval;
+    const stretchDelay = wait;
+
+    for (let i = 0; i < array.length; i++) {
+      let item = document.getElementById(`char${i + 1}`).style;
+      item.position = 'relative';
+      let horizontal = 0;
+
+      // Make individual letter bounce up and down
+      setInterval(() => {
+        if (horizontal === 360) {
+          horizontal = 0;
+        } else {
+          horizontal++;
+        }
+        let vertical = 0;
+        item.fontSize = `${
+          vertical + Math.sin(2 * Math.PI * (horizontal / 50)) * 10 + 30
+        }px`;
+      }, waveInterval);
+
+      // Set delay between each letter
+      await delay(stretchDelay);
+    }
   }
 })();
