@@ -1,17 +1,7 @@
-/* becode/javascript
- *
- * /07-misc/01-waving-text/script.js - 7.1: effet vague
- *
- * coded by leny@BeCode
- * started at 26/10/2018
- */
-
-// NOTE: don't focus on the existing code structure for now.
-// You will have time to focus on it later.
-
 (function () {
   //1: SET INTERVALS - milliseconds
   const colorInterval = 100;
+  let colorRange = [70, 100];
   const waveInterval = 50;
   const waveDelay = 50;
   const stretchInterval = 50;
@@ -21,10 +11,15 @@
 
   //2: CALL FUNCTIONS
   setInterval(() => {
-    colorChangeAnimation(spans);
+    colorChangeAnimation(spans, colorRange);
   }, colorInterval);
   stretchAnimation(spans, stretchInterval, stretchDelay);
   waveAnimation(spans, waveInterval, waveDelay);
+
+  //3: CLICK HANDLER
+  document.querySelector('#target').onclick = () => {
+    colorRange = [~~(Math.random() * 250) + 1, ~~(Math.random() * 150) + 1];
+  };
 
   // FUNCTIONS
   function textToSpanElements() {
@@ -49,13 +44,16 @@
   }
 
   // Color Every Letter with a random color in a cycle
-  function colorChangeAnimation(letters) {
+  function colorChangeAnimation(letters, range) {
     const array = letters;
+    const range1 = range[0];
+    const range2 = range[1];
+
     for (let i = 1; i < array.length + 1; i++) {
       const [r, g, b] = [
-        ~~(Math.random() * 70) + 100,
-        ~~(Math.random() * 70) + 100,
-        ~~(Math.random() * 70) + 100,
+        ~~(Math.random() * range1) + range2,
+        ~~(Math.random() * range1) + range2,
+        ~~(Math.random() * range1) + range2,
       ];
       const fontColor = `rgb(${r},${g},${b})`;
       document.querySelector(`#char${i}`).style.color = fontColor;
@@ -109,7 +107,7 @@
         }
         let vertical = 0;
         item.fontSize = `${
-          vertical + Math.sin(2 * Math.PI * (horizontal / 50)) * 10 + 30
+          vertical + Math.sin(2 * Math.PI * (horizontal / 50)) * 13 + 30
         }px`;
       }, waveInterval);
 
