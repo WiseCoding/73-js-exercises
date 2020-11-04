@@ -6,7 +6,7 @@ _[Assignment](https://github.com/becodeorg/gnt-yu-3-21/tree/master/2.The-Hill/2.
 
 # Check My Results Online 👀
 
-- [**73 JS Exercises**](https://wisecoding.github.io/73-js-exercises/)
+- [**73 JS Exercises**](https://mattiasbonte.github.io/73-js-exercises/)
 
 # Built with 🛠
 
